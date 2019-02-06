@@ -1,6 +1,6 @@
 const Plan = require('../models/plan')
 const axios = require('axios')
-const stripe = require('stripe')('SK_TEST_APIKEY')
+const stripe = require('stripe')('test')
 
 async function findAll (ctx) {
   const plans = await Plan.find({})
@@ -49,30 +49,6 @@ async function stripePlans (ctx) {
   console.log(returnPlans)
   ctx.body = returnPlans
 }
-
-// async function findSubs (ctx) {
-//   const headers = {
-//         'Authorization': 'Bearer sk_test_lZ7JO4FsjEsp2JjeUiK1iScz'
-//       }
-//   console.log('Alotetaan axios kutsu')
-//    return axios.get('https://api.stripe.com/v1/plans',{headers:headers})
-//     .then(response => {
-//       const plans = response.data
-//       //TODO: convert response data into plan objects and save to database
-//       // console.log(plans) will show you se full response from stripe api
-//
-//         console.log(plans)
-//
-//       //return plans <- ei toimi kun pitää kääntää Plan modelin mukaisiksi olioiks
-//     })
-// }
-// async function update (ctx) {
-//   const id = ctx.params.id
-//   const plan = await Plan.findById(id)
-//   plan.done = !plan.done
-  // const updatePlan = await plan.save()
-  // ctx.body = updatePlan
-// }
 
 module.exports = {
   findAll,
