@@ -1,6 +1,6 @@
 const Plan = require('../models/plan')
 const axios = require('axios')
-const stripe = require('stripe')('test')
+const stripe = require('stripe')('sk_test_lZ7JO4FsjEsp2JjeUiK1iScz')
 
 async function findAll (ctx) {
   const plans = await Plan.find({})

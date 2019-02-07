@@ -2,10 +2,12 @@
   <section class="page-plans">
     <h1> Plans page </h1>
     <p class="loading" v-if="loading">loading gif</p>
-    <article v-for="plan in plans" :key="plan.id">
+    <div class="container">
+    <article class="card" v-for="plan in plans" :key="plan.id">
       <h2>{{plan.description}}</h2>
       <span>{{plan.price}}€</span>
 </article>
+</div>
 </section>
 </template>
 <script>
@@ -52,4 +54,18 @@ export default {
   border: 2px;
   border-radius: 4px;
 }
+.container {
+  padding: 2px 16px;
+}
+.card {
+  max-width: 500px;
+  border: 1px solid grey;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  margin-top: 5px;
+}
+.card:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
 </style>
