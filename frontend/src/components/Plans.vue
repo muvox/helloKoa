@@ -1,4 +1,5 @@
 <template>
+  <div class="container">
   <section class="page-plans">
     <h1> Plans page </h1>
     <p class="loading" v-if="loading">loading gif</p>
@@ -6,10 +7,14 @@
     <article class="card" v-for="plan in plans" :key="plan.id">
       <h2>{{plan.description}}</h2>
       <span>{{plan.price}}€</span>
+      <br>
+      <span>Duration: {{plan.length}} Months</span>
 </article>
 </div>
 </section>
+</div>
 </template>
+
 <script>
 
 import StripeApi from '@/services/api/StripeApi'
@@ -63,9 +68,22 @@ export default {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   margin-top: 5px;
+  margin: 5px;
 }
 .card:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.card h2 {
+  margin: 20px;
+}
+.card span{
+  margin: 50px;
+}
+.container {
+  display: flex;
+align-items: center;
+justify-content: center;
+height: 50vh;
 }
 
 </style>

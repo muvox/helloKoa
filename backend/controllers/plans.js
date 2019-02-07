@@ -24,7 +24,7 @@ async function destroy (ctx) {
 }
 
 async function stripePlans (ctx) {
-  const plans = await stripe.plans.list( {limit: 3})
+  const plans = await stripe.plans.list( {limit: 5})
   const returnPlans = []
   const array = plans.data
 
