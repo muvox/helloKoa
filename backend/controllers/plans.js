@@ -40,6 +40,7 @@ async function stripePlans (ctx) {
     const newPlan = new Plan(dtoPlan)
 
     console.log(newPlan)
+    const savedPlan = await newPlan.save()
 
     returnPlans.push(newPlan)
 
