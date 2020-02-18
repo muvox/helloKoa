@@ -55,6 +55,6 @@ require('./routes')(router)
 app.use(router.routes())
 app.use(router.allowedMethods())
 
-mongoose.connect('mongodb://super2:korkki12@ds253284.mlab.com:53284/testikoa')
+mongoose.connect('')
 
 module.exports = app
